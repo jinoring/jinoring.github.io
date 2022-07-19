@@ -1,25 +1,41 @@
-title:              Jinoring's Blog
-email:              jinho.j.lee97@gmail.com
-description:        Recording my life
-author:             Jinoring
-baseurl:            ""
-url:                "https://jinoring.github.io"
+title : Jinho's Blog
+name: 'Elementary Jekyll Theme'
+description: 'Simple, light weight, responsive jekyll theme for hackers'
 
-# Social Profiles
-twitter_username:   
-github_username:    
-facebook_username:  
-instagram_username:  
-linkedin_username:
+markdown: kramdown
+highlighter: rouge
+javascript_enabled: true
 
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+featured_posts_title: Unrelated
+featured_posts:
+  - url: '#'
+    title: 'Featured post #1'
+  - url: '#'
+    title: 'Featured post #2'
+  - url: '#'
+    title: 'Featured post #3'
 
-# Build settings
-markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
+collections:
+  news:
+    title: News
+    default_open: false
+    output: true
+  posts:
+    title: Essays
+    default_open: true
+    output: true
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      title: Essays
+      permalink: /post/:title
+  - scope:
+      type: news
+    values:
+      title: News
+      permalink: /news/:title
+
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
